@@ -40,9 +40,15 @@ public class PlayerInteraction : MonoBehaviour
                         ho.transform.localPosition = Vector3.zero;
                         
                         carryingObject = ho;
+                        return;
                     }
 
-                    
+                    Interactable interactable = hit.transform.GetComponent<Interactable>();
+
+
+                    interactable?.Interact();
+
+
                 }
             }
         }

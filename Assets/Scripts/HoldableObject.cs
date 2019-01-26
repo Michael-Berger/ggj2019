@@ -37,4 +37,9 @@ public class HoldableObject : Interactable
         isBeingHeld = false;
     }
 
+    public override void Interact()
+    {
+        base.Interact();
+    }
+
 }

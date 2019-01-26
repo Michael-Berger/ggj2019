@@ -15,5 +15,10 @@ public class Mirror : Interactable
     {
         
     }
-    
+
+    public override void Interact()
+    {
+        base.Interact();
+    }
+
 }
