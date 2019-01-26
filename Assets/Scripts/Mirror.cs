@@ -5,11 +5,25 @@ using UnityEngine;
 public class Mirror : Interactable
 {
     public Mirror counterpart;
+    
+    private Camera mirrorCamera;
+    private RenderTexture texture;
+
+    private void Awake()
+    {
+        texture = new RenderTexture(256, 256, 16, RenderTextureFormat.ARGB32);
+
+        Material material = GetComponent<Renderer>().material;
+        material.mainTexture = texture;
+
+        mirrorCamera = GetComponentInChildren<Camera>();
+    }
 
     // Start is called before the first frame update
     void Start()
     {
-        
+        mirrorCamera.targetTexture = counterpart.texture;
+        texture.Create();
     }
 
     // Update is called once per frame
