@@ -10,9 +10,14 @@ public class Keypad : MonoBehaviour
     
     public string keyCode;
 
-    private string currentSequence;
+    public MeshRenderer baseMeshRenderer;
+
+    private string currentSequence = "";
 
     private bool locked = true;
+
+
+
 
     private void Awake()
     {
@@ -32,16 +37,20 @@ public class Keypad : MonoBehaviour
 
         if (keyCode.Substring(currentSequence.Length, 1) == key)
         {
+            
+
             currentSequence += key;
+
             if (currentSequence == keyCode)
             {
                 Unlocked?.Invoke();
                 locked = false;
+                baseMeshRenderer.material.EnableKeyword("_EMISSION");
             }
         }
         else
         {
-            currentSequence = "";
+            currentSequence = key;
         }
     }
 
