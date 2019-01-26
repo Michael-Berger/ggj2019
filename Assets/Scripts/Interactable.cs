@@ -16,8 +16,8 @@ public class Interactable : MonoBehaviour
         
     }
 
-    virtual public void Interact(PlayerInteraction playerInteraction)
+    virtual public bool Interact(HoldableObject carryingObject,PlayerInteraction playerInteraction)
     {
-
+        return true;
     }
 }
