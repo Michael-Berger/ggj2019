@@ -10,6 +10,8 @@ public class Mirror : Interactable
     private Camera mirrorCamera;
     private RenderTexture texture;
 
+    Quaternion counterpartDeltaRotation;
+
     private void Awake()
     {
         if (counterpart == null) {
@@ -24,13 +26,18 @@ public class Mirror : Interactable
         material.mainTexture = texture;
 
         cameraObject = new GameObject();
+        cameraObject.name = "Camera";
         cameraObject.AddComponent<Camera>();
         cameraObject.transform.parent = transform;
-        cameraObject.transform.localRotation *= Quaternion.Euler(-90, 180, 0);
         cameraObject.transform.position = mesh.bounds.center;
 
+        cameraObject.transform.rotation = Quaternion.LookRotation(transform.up, transform.forward);
+        
         mirrorCamera = GetComponentInChildren<Camera>();
         mirrorCamera.targetDisplay = 2;
+        
+        counterpartDeltaRotation = counterpart.transform.rotation * Quaternion.Inverse(transform.rotation);
+
     }
 
     // Start is called before the first frame update
@@ -43,9 +50,7 @@ public class Mirror : Interactable
     // Update is called once per frame
     void Update()
     {
-        Quaternion mainCameraRotation = Camera.main.transform.rotation;
-        mainCameraRotation *= Quaternion.Euler(0, 180, 0);
-        mirrorCamera.transform.rotation = mainCameraRotation;
+        cameraObject.transform.rotation = counterpartDeltaRotation * Quaternion.LookRotation(Camera.main.transform.forward);
     }
 
     public override bool Interact(HoldableObject carryingObject, PlayerInteraction playerInteraction)
