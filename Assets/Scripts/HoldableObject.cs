@@ -37,9 +37,9 @@ public class HoldableObject : Interactable
         isBeingHeld = false;
     }
 
-    public override void Interact()
+    public override void Interact(PlayerInteraction playerInteraction)
     {
-        base.Interact();
+        base.Interact(playerInteraction);
     }
 
 }

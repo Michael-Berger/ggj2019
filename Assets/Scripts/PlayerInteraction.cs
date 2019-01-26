@@ -46,7 +46,7 @@ public class PlayerInteraction : MonoBehaviour
                     Interactable interactable = hit.transform.GetComponent<Interactable>();
 
 
-                    interactable?.Interact();
+                    interactable?.Interact(this);
 
 
                 }
