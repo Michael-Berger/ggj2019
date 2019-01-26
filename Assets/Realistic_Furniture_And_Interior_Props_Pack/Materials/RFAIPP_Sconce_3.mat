@@ -7,7 +7,7 @@ Material:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: RFAIPP_Chandelier_3
+  m_Name: RFAIPP_Sconce_3
   m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
   m_ShaderKeywords: _NORMALMAP _SMOOTHNESS_TEXTURE_ALBEDO_CHANNEL_A _SPECGLOSSMAP
   m_LightmapFlags: 4
@@ -20,7 +20,7 @@ Material:
     serializedVersion: 3
     m_TexEnvs:
     - _BumpMap:
-        m_Texture: {fileID: 2800000, guid: 141d4e46c29e7344283f7a0c60c096d9, type: 3}
+        m_Texture: {fileID: 2800000, guid: 3fd1f6e54ea0aea4d85e69ecbdd81a80, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _DetailAlbedoMap:
@@ -36,11 +36,11 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _EmissionMap:
-        m_Texture: {fileID: 2800000, guid: dbdf5e0d8f324ff4da898406657c14fc, type: 3}
+        m_Texture: {fileID: 2800000, guid: 71e8430ba11e86b44819c2ad2d80ebfa, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MainTex:
-        m_Texture: {fileID: 2800000, guid: 6b9371aafd7f647469e8004e8f280904, type: 3}
+        m_Texture: {fileID: 2800000, guid: e7541b6d588c1f24289c2ff4ee452c82, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _MetallicGlossMap:
@@ -48,7 +48,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _OcclusionMap:
-        m_Texture: {fileID: 2800000, guid: eaf8ebbe26ced4446bd3b3fd28e214dc, type: 3}
+        m_Texture: {fileID: 2800000, guid: 187862b38eddac94e8b733a9c96485a7, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _ParallaxMap:
@@ -56,7 +56,7 @@ Material:
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     - _SpecGlossMap:
-        m_Texture: {fileID: 2800000, guid: f9480670fa0a207419631a02b848cffe, type: 3}
+        m_Texture: {fileID: 2800000, guid: 302f532b648d43c4d87d70f778d27be9, type: 3}
         m_Scale: {x: 1, y: 1}
         m_Offset: {x: 0, y: 0}
     m_Floats:
@@ -67,7 +67,7 @@ Material:
     - _GlossMapScale: 1
     - _Glossiness: 0.2
     - _GlossyReflections: 1
-    - _Metallic: 1
+    - _Metallic: 0.01
     - _Mode: 0
     - _OcclusionStrength: 1
     - _Parallax: 0.02
