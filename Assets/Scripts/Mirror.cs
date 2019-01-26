@@ -12,6 +12,12 @@ public class Mirror : Interactable
 
     private void Awake()
     {
+        if (counterpart == null) {
+            counterpart = this;
+        }
+
+        MeshRenderer mesh = GetComponent<MeshRenderer>();
+
         texture = new RenderTexture(256, 256, 16, RenderTextureFormat.ARGB32);
 
         Material material = GetComponent<Renderer>().material;
@@ -20,9 +26,11 @@ public class Mirror : Interactable
         cameraObject = new GameObject();
         cameraObject.AddComponent<Camera>();
         cameraObject.transform.parent = transform;
-        cameraObject.transform.rotation *= Quaternion.Euler(-90, 0, 0);
+        cameraObject.transform.localRotation *= Quaternion.Euler(-90, 180, 0);
+        cameraObject.transform.position = mesh.bounds.center;
 
         mirrorCamera = GetComponentInChildren<Camera>();
+        mirrorCamera.targetDisplay = 2;
     }
 
     // Start is called before the first frame update
