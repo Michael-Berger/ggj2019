@@ -29,7 +29,9 @@ public class Mirror : Interactable
     // Update is called once per frame
     void Update()
     {
-        
+        Quaternion mainCameraRotation = Camera.main.transform.rotation;
+        mainCameraRotation *= Quaternion.Euler(0, 180, 0);
+        mirrorCamera.transform.rotation = mainCameraRotation;
     }
 
     public override bool Interact(HoldableObject carryingObject, PlayerInteraction playerInteraction)
