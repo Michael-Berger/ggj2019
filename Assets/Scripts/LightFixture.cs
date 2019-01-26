@@ -48,7 +48,7 @@ public class LightFixture : Interactable
     }
 
 
-    private void LightToggle()
+    public void LightToggle()
     {
         if (hasBulb && (lightSwitch == null  || lightSwitch.switchIsOn))
         {
