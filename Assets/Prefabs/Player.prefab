@@ -242,8 +242,8 @@ MonoBehaviour:
   cam: {fileID: 592335287931317700}
   movementSettings:
     ForwardSpeed: 20
-    BackwardSpeed: 5
-    StrafeSpeed: 5
+    BackwardSpeed: 15
+    StrafeSpeed: 15
     RunMultiplier: 1.4
     RunKey: 304
     JumpForce: 0
