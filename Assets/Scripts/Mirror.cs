@@ -5,7 +5,8 @@ using UnityEngine;
 public class Mirror : Interactable
 {
     public Mirror counterpart;
-    
+
+    private GameObject cameraObject;
     private Camera mirrorCamera;
     private RenderTexture texture;
 
@@ -15,6 +16,11 @@ public class Mirror : Interactable
 
         Material material = GetComponent<Renderer>().material;
         material.mainTexture = texture;
+
+        cameraObject = new GameObject();
+        cameraObject.AddComponent<Camera>();
+        cameraObject.transform.parent = transform;
+        cameraObject.transform.rotation *= Quaternion.Euler(-90, 0, 0);
 
         mirrorCamera = GetComponentInChildren<Camera>();
     }
