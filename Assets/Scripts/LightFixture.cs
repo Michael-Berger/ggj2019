@@ -52,17 +52,43 @@ public class LightFixture : Interactable
     {
         if (hasBulb && (lightSwitch == null  || lightSwitch.switchIsOn))
         {
-            // light on
-            light.enabled = true;
-            material.EnableKeyword("_EMISSION");
+            LightOn();
+            
         }
         else
         {
-            // light off
-            light.enabled = false;
-            material.DisableKeyword("_EMISSION");
+            LightOff();
         }
     }
+
+    private void LightOn()
+    {
+        light.enabled = true;
+        material.EnableKeyword("_EMISSION");
+    }
+
+    private void LightOff()
+    {
+        light.enabled = false;
+        material.DisableKeyword("_EMISSION");
+    }
+
+    public void ForceOn()
+    {
+        LightOn();
+    }
+
+    public void ForceOff()
+    {
+        LightOff();
+    }
+
+    public void ResetForcedLights()
+    {
+        LightToggle();
+    }
+
+
 
 
 }
