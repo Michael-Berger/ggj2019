@@ -12,8 +12,7 @@ public class Lock : Interactable
     {
         if (carryingObject is Key && ((Key)carryingObject).keyCode == keyCode)
         {
-            playerInteraction.Drop();
-            Destroy(carryingObject.gameObject);
+            playerInteraction.Drop(true);
             locked = false;
             return true;
         }

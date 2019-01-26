@@ -10,11 +10,15 @@ public class PlayerInteraction : MonoBehaviour
 
     private Rigidbody carryBody;
 
+    private LayerMask interactMask;
+    private int originalCarryLayer;
+
     private void Awake()
     {
         carryBody = new GameObject().AddComponent<Rigidbody>();
         carryBody.isKinematic = true;
         carryBody.name = "Carry Anchor";
+        interactMask = ~LayerMask.GetMask("CarriedObject");
     }
 
     private void FixedUpdate()
@@ -32,7 +36,7 @@ public class PlayerInteraction : MonoBehaviour
         {
             Ray ray = Camera.main.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, 2f))
+            if (Physics.Raycast(ray, out hit, 2f, interactMask))
             {
                 HoldableObject ho = hit.transform.GetComponent<HoldableObject>();
 
@@ -69,12 +73,17 @@ public class PlayerInteraction : MonoBehaviour
 
     }
 
-    public void Drop()
+    public void Drop(bool destroy = false)
     {
-        carryingObject.transform.parent = null;
+        carryingObject.gameObject.layer = originalCarryLayer;
         // Todo determine if we can just check top level for these components
         //carryingObject.GetComponent<Rigidbody>().isKinematic = false;
         //carryingObject.GetComponentInChildren<Collider>().enabled = true;
+
+        if (destroy)
+        {
+            Destroy(carryingObject.gameObject);
+        }
 
         carryingObject = null;
     }
@@ -84,6 +93,10 @@ public class PlayerInteraction : MonoBehaviour
     {
 
         carryingObject = ho;
+
+        originalCarryLayer = carryingObject.gameObject.layer;
+
+        carryingObject.gameObject.layer = LayerMask.NameToLayer("CarriedObject");
 
         Rigidbody rb = carryingObject.GetComponent<Rigidbody>();
 
@@ -106,6 +119,8 @@ public class PlayerInteraction : MonoBehaviour
         {
             yield return null;
         }
+
+        
 
         Destroy(joint);
 
