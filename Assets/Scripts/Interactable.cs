@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Interactable : MonoBehaviour
+abstract public class Interactable : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
@@ -16,8 +16,5 @@ public class Interactable : MonoBehaviour
         
     }
 
-    virtual public bool Interact(HoldableObject carryingObject,PlayerInteraction playerInteraction)
-    {
-        return true;
-    }
+    abstract public bool Interact(HoldableObject carryingObject, PlayerInteraction playerInteraction);
 }

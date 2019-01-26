@@ -39,7 +39,7 @@ public class HoldableObject : Interactable
 
     public override bool Interact(HoldableObject carryingObject, PlayerInteraction playerInteraction)
     {
-        return base.Interact(carryingObject,playerInteraction);
+        return true;
     }
 
 }

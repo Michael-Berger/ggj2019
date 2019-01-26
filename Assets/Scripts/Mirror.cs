@@ -21,7 +21,7 @@ public class Mirror : Interactable
     public override bool Interact(HoldableObject carryingObject, PlayerInteraction playerInteraction)
     {
         TeleportPlayerToCounterpart(playerInteraction);
-        return base.Interact(carryingObject, playerInteraction);
+        return true;
     }
 
     void TeleportPlayerToCounterpart(PlayerInteraction playerInteraction)

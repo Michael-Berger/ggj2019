@@ -50,12 +50,7 @@ public class PlayerInteraction : MonoBehaviour
 
             if (carryingObject != null)
             {
-                carryingObject.transform.parent = null;
-                // Todo determine if we can just check top level for these components
-                carryingObject.GetComponentInChildren<Rigidbody>().isKinematic = false;
-                carryingObject.GetComponentInChildren<Collider>().enabled = true;
-
-                carryingObject = null;
+                Drop();
             }
             else
             {
@@ -65,6 +60,17 @@ public class PlayerInteraction : MonoBehaviour
 
 
     }
+
+    public void Drop()
+    {
+        carryingObject.transform.parent = null;
+        // Todo determine if we can just check top level for these components
+        carryingObject.GetComponentInChildren<Rigidbody>().isKinematic = false;
+        carryingObject.GetComponentInChildren<Collider>().enabled = true;
+
+        carryingObject = null;
+    }
+
 
     IEnumerator CarryObject()
     {
