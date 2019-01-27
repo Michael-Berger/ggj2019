@@ -57,6 +57,14 @@ public class DebugHelper : MonoBehaviour
 
         }
 
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            foreach (Door door in FindObjectsOfType<Door>())
+            {
+                door.Open();
+            }
+        }
+
 #endif
 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -68,13 +76,7 @@ public class DebugHelper : MonoBehaviour
             SceneManager.LoadScene("House");
         }
 
-        if (Input.GetKeyDown(KeyCode.U))
-        {
-            foreach (Door door in FindObjectsOfType<Door>())
-            {
-                door.Open();
-            }
-        }
+
 
 
     }
