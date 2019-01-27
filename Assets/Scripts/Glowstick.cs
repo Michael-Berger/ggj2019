@@ -8,21 +8,37 @@ public class Glowstick : HoldableObject
     private Color emissiveColor;
     private MeshRenderer meshRenderer;
 
+    private bool showingLight = true;
+
 
     private void Awake()
     {
         meshRenderer = GetComponent<MeshRenderer>();
         emissiveColor = meshRenderer.material.GetColor("_EmissionColor");
+        FadeOut(0);
     }
 
 
-    public void FadeOut(float time) => StartCoroutine(_Fade(time, 1,0));
-    public void FadeIn(float time) => StartCoroutine(_Fade(time, 0,1));
+    public void FadeOut(float time)
+    {
+        if (showingLight)
+        {
+            showingLight = false;
+            StartCoroutine(_Fade(time, 1, 0));
+        }
+    }
+
+    public void FadeIn(float time)
+    {
+        if (!showingLight)
+        {
+            showingLight = true;
+            StartCoroutine(_Fade(time, 0, 1));
+        }
+    }
 
     IEnumerator _Fade(float time, float start, float target)
     {
-        
-
         float timer = 0;
 
         while (timer <= time)
@@ -33,6 +49,12 @@ public class Glowstick : HoldableObject
 
             yield return null;
         }
+    }
+
+    public override bool Interact(HoldableObject carryingObject, PlayerInteraction playerInteraction)
+    {
+        FadeIn(1.0f);
+        return base.Interact(carryingObject, playerInteraction);
     }
 
 
