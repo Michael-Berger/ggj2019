@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public enum ForcedSetting
 {
@@ -23,6 +24,8 @@ public class DebugHelper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+#if UNITY_EDITOR
+
         if (Input.GetKeyDown(KeyCode.L))
         {
             //  Cycle lights
@@ -52,6 +55,17 @@ public class DebugHelper : MonoBehaviour
                     break;
             }
 
+        }
+
+#endif
+
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Application.Quit();
+        }
+
+        if (Input.GetKeyDown(KeyCode.F5)){
+            SceneManager.LoadScene("House");
         }
 
         if (Input.GetKeyDown(KeyCode.U))
