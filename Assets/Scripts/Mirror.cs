@@ -7,7 +7,8 @@ public class Mirror : Interactable
     public Mirror counterpart;
 
     private GameObject cameraObject;
-    private Camera mirrorCamera;
+    [System.NonSerialized]
+    public Camera mirrorCamera;
     private RenderTexture texture;
 
     private new Renderer renderer;
@@ -55,7 +56,7 @@ public class Mirror : Interactable
     // Update is called once per frame
     void Update()
     {
-        mirrorCamera.enabled = renderer.IsVisibleFrom(Camera.main);
+        counterpart.mirrorCamera.enabled = renderer.IsVisibleFrom(Camera.main);
 
         cameraObject.transform.rotation = counterpartDeltaRotation * Quaternion.LookRotation(Camera.main.transform.forward);
     }
