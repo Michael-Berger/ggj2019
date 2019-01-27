@@ -10,12 +10,22 @@ public class Glowstick : HoldableObject
 
     private bool fadeInComplete = false;
 
+    public bool glowOnAwake = false;
+
 
     private void Awake()
     {
         meshRenderer = GetComponent<MeshRenderer>();
         emissiveColor = meshRenderer.material.GetColor("_EmissionColor");
-        FadeOut(0);
+        if (glowOnAwake)
+        {
+            fadeInComplete = true;
+        }
+        else
+        {
+            FadeOut(0);
+        }
+
     }
 
 

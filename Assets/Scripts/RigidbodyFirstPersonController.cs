@@ -143,12 +143,10 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
             if (!footsteps.isPlaying && (Mathf.Abs(Input.GetAxis("Horizontal")) > 0f || Mathf.Abs(Input.GetAxis("Vertical")) > 0f))
             {
-                print("playing");
                 footsteps.UnPause();
             }
             else if (footsteps.isPlaying && (Mathf.Approximately(Mathf.Abs(Input.GetAxis("Horizontal")), 0) && Mathf.Approximately(Mathf.Abs(Input.GetAxis("Vertical")), 0)))
             {
-                print("pausing");
                 footsteps.Pause();
             }
         }
