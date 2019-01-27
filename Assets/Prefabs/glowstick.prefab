@@ -123,6 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9020df8a072704a4e83b1441bd6f70ff, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  glowOnAwake: 0
 --- !u!1 &3134023366135517349
 GameObject:
   m_ObjectHideFlags: 0
@@ -165,8 +166,8 @@ Light:
   serializedVersion: 8
   m_Type: 2
   m_Color: {r: 0.1728818, g: 0.990566, b: 0.50576705, a: 1}
-  m_Intensity: 2
-  m_Range: 5
+  m_Intensity: 3.5
+  m_Range: 7
   m_SpotAngle: 30
   m_CookieSize: 10
   m_Shadows:
