@@ -10,6 +10,8 @@ public class Mirror : Interactable
     private Camera mirrorCamera;
     private RenderTexture texture;
 
+    private new Renderer renderer;
+
     Quaternion counterpartDeltaRotation;
 
     private void Awake()
@@ -38,6 +40,9 @@ public class Mirror : Interactable
         
         counterpartDeltaRotation = counterpart.transform.rotation * Quaternion.Inverse(transform.rotation);
 
+
+        renderer = GetComponent<MeshRenderer>();
+
     }
 
     // Start is called before the first frame update
@@ -50,6 +55,8 @@ public class Mirror : Interactable
     // Update is called once per frame
     void Update()
     {
+        mirrorCamera.enabled = renderer.IsVisibleFrom(Camera.main);
+
         cameraObject.transform.rotation = counterpartDeltaRotation * Quaternion.LookRotation(Camera.main.transform.forward);
     }
 
