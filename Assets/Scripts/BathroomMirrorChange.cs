@@ -7,6 +7,7 @@ public class BathroomMirrorChange : MonoBehaviour
 {
     public Mirror newCounterpart;
     public Keypad keypad;
+    public Door door;
 
     private void Awake() => keypad.Unlocked += Unlocked;
 
@@ -14,6 +15,8 @@ public class BathroomMirrorChange : MonoBehaviour
 
         GetComponent<Mirror>().counterpart = newCounterpart;
         newCounterpart.mirrorCamera.targetTexture = GetComponent<Mirror>().texture;
+        door.locked = false;
+        door.Open();
     }
 
 }
