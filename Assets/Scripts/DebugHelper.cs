@@ -54,6 +54,15 @@ public class DebugHelper : MonoBehaviour
 
         }
 
+        if (Input.GetKeyDown(KeyCode.U))
+        {
+            foreach (Door door in FindObjectsOfType<Door>())
+            {
+                door.Open();
+            }
+        }
+
+
     }
 
 }

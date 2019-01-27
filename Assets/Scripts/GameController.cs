@@ -8,7 +8,8 @@ public class GameController : MonoBehaviour
 
     public GameObject reticle;
     public CanvasGroup splash;
-    public MeshRenderer lanternRenderer;
+    //public MeshRenderer lanternRenderer;
+    public Glowstick glowstick;
     //private Material laternMaterial;
     private Color laternEmissiveColor;
 
@@ -20,14 +21,15 @@ public class GameController : MonoBehaviour
     {
         reticle.SetActive(false);
         splash.gameObject.SetActive(true);
-        laternEmissiveColor = lanternRenderer.material.GetColor("_EmissionColor");
-        lanternRenderer.material.SetColor("_EmissionColor", laternEmissiveColor * 0);
-        lanternRenderer.GetComponentInChildren<Light>().intensity = 0;
+        
         StartCoroutine(Splash());
     }
 
     private IEnumerator Splash()
     {
+        yield return null;
+        glowstick.FadeOut(0);
+
         float timer = 0;
 
         while (timer < splashTime)
@@ -45,16 +47,7 @@ public class GameController : MonoBehaviour
             yield return null;
         }
 
-        timer = 0;
-
-        while (timer < lightFadeTime)
-        {
-            timer += Time.deltaTime;
-            lanternRenderer.material.SetColor("_EmissionColor", laternEmissiveColor * Mathf.Lerp(0, 1, timer / lightFadeTime));
-            lanternRenderer.GetComponentInChildren<Light>().intensity = Mathf.Lerp(0, 1, timer / lightFadeTime);
-
-            yield return null;
-        }
+        glowstick.FadeIn(lightFadeTime);
 
 
 
@@ -62,11 +55,5 @@ public class GameController : MonoBehaviour
         splash.gameObject.SetActive(false);
 
 
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
     }
 }

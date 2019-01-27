@@ -40,14 +40,14 @@ public class Door : Lock
         }
     }
 
-    private void Open()
+    public void Open()
     {
         opened = true;
         anim.SetTrigger("Open");
         // call open animation
     }
 
-    private void Close()
+    public void Close()
     {
         opened = false;
         anim.SetTrigger("Close");
