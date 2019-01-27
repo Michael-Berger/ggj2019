@@ -1198,6 +1198,36 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -0.496
       objectReference: {fileID: 0}
+    - target: {fileID: 4774891956671772384, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774891956671772384, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774891956671772384, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774891956671772384, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.000008800915
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774891956671772384, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: -179.999
+      objectReference: {fileID: 0}
+    - target: {fileID: 4774891956671772384, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -3.877
+      objectReference: {fileID: 0}
     - target: {fileID: 5487708393191920377, guid: 1f0a240a093c58341983c9ffa72c09ce,
         type: 3}
       propertyPath: keyCode
@@ -3356,6 +3386,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 6.8575163, y: 2.3972754, z: 0.64045393}
   m_Center: {x: -0.06253694, y: 2.00331, z: -0.1797785}
+--- !u!114 &703245409 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 6200242467943039120, guid: 1f0a240a093c58341983c9ffa72c09ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 280059031}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6e19dda56c004c24d806bc89f8aa46fc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!225 &711681523 stripped
 CanvasGroup:
   m_CorrespondingSourceObject: {fileID: 1465612637, guid: 2ec316db307b2f24ab7b0ac8693f451e,
@@ -4775,6 +4817,79 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1088814792
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1088814795}
+  - component: {fileID: 1088814794}
+  - component: {fileID: 1088814793}
+  m_Layer: 0
+  m_Name: DoorCloseTrigger
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1088814793
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088814792}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f3ad061e7fa6a48f9ac8318407f3be00, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  trigger:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 703245409}
+        m_MethodName: CloseAndLock
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+--- !u!65 &1088814794
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088814792}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3.8132057, y: 2.3801022, z: 0.7308979}
+  m_Center: {x: -0.4195156, y: -0.3501246, z: 2.3172708}
+--- !u!4 &1088814795
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1088814792}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 21.612562, y: -0.9679313, z: -4.3916674}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 16
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1122731721 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5487708393430151978, guid: 1f0a240a093c58341983c9ffa72c09ce,

@@ -61,4 +61,10 @@ public class Door : Lock
         // call close  animation
     }
 
+    public void CloseAndLock()
+    {
+        Close();
+        locked = true;
+    }
+
 }
