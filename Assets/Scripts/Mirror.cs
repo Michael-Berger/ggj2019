@@ -58,7 +58,20 @@ public class Mirror : Interactable
     {
         counterpart.mirrorCamera.enabled = renderer.IsVisibleFrom(Camera.main);
 
-        cameraObject.transform.rotation = counterpartDeltaRotation * Quaternion.LookRotation(Camera.main.transform.forward);
+        if (counterpartDeltaRotation == Quaternion.identity)
+        {
+
+            Vector3 inverted = Vector3.up * Vector3.Dot(-Camera.main.transform.forward, Vector3.up);
+
+
+            cameraObject.transform.rotation = Quaternion.LookRotation(-Camera.main.transform.forward - 2* inverted);
+        }
+        else
+        {
+            cameraObject.transform.rotation = counterpartDeltaRotation * Quaternion.LookRotation(Camera.main.transform.forward);
+        }
+
+        
     }
 
     public override bool Interact(HoldableObject carryingObject, PlayerInteraction playerInteraction)
