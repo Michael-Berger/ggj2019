@@ -44,4 +44,18 @@ public class FridgeDoor : Interactable
             animator.SetTrigger("Open");
         }
     }
+
+    public void CrackOpenDoorAfterDelay(float delay)
+    {
+        StartCoroutine(_CrackOpenDoorAfterDelay(delay));
+    }
+
+    private IEnumerator _CrackOpenDoorAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        if (!open)
+        {
+            animator.SetTrigger("Crack Open");
+        }
+    }
 }
