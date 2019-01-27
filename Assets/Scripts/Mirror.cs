@@ -82,10 +82,10 @@ public class Mirror : Interactable
 
     void TeleportPlayerToCounterpart(PlayerInteraction playerInteraction)
     {
-        Vector3 relativePositionToThis = playerInteraction.transform.InverseTransformPoint(transform.position);
+        Vector3 relativePositionToThis = transform.InverseTransformPoint(playerInteraction.transform.position);
         Vector3 newPosition = counterpart.transform.TransformPoint(relativePositionToThis);
         playerInteraction.transform.position = newPosition;
-        playerInteraction.GetComponent<UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController>().mouseLook.TurnAround();
+        //playerInteraction.GetComponent<UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController>().mouseLook.TurnAround();
     }
 
 }
