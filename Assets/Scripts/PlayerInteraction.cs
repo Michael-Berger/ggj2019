@@ -22,6 +22,8 @@ public class PlayerInteraction : MonoBehaviour
 
     public static bool InMirrorWorld { get; set; } = false;
 
+    private float defaultFoV;
+
 
     private void Awake()
     {
@@ -29,6 +31,7 @@ public class PlayerInteraction : MonoBehaviour
         carryBody.isKinematic = true;
         carryBody.name = "Carry Anchor";
         interactMask = ~LayerMask.GetMask("CarriedObject");
+        defaultFoV = Camera.main.fieldOfView;
     }
 
     private void FixedUpdate()
@@ -152,8 +155,42 @@ public class PlayerInteraction : MonoBehaviour
 
         Transitioned?.Invoke(InMirrorWorld);
         GetComponentInChildren<FullScreenEffect>().enabled = InMirrorWorld;
+        StartCoroutine(TransitioningSequence());
+    }
+
+
+    IEnumerator TransitioningSequence()
+    {
+        float timer = 0;
+        float shrinkTime = 0.15f;
+        float growTime = 0.25f;
+
+
+        while (timer < shrinkTime)
+        {
+            timer += Time.deltaTime;
+            Camera.main.fieldOfView = Mathf.Lerp(defaultFoV, 60, timer / shrinkTime);// Spring(defaultFoV, 140, timer / shrinkTime);
+            yield return null;
+        }
+        timer = 0;
+
+        while (timer < growTime)
+        {
+            timer += Time.deltaTime;
+            Camera.main.fieldOfView = Mathf.Lerp(60, defaultFoV, timer / growTime); //Spring(140, defaultFoV, timer / growTime);
+            yield return null;
+        }
         
     }
+
+
+
+    //public static float Spring(float start, float end, float value)
+    //{
+    //    value = Mathf.Clamp01(value);
+    //    value = (Mathf.Sin(value * Mathf.PI * (0.2f + 2.5f * value * value * value)) * Mathf.Pow(1f - value, 2.2f) + value) * (1f + (1.2f * (1f - value)));
+    //    return start + (end - start) * value;
+    //}
 
 
 
