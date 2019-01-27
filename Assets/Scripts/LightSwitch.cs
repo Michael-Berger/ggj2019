@@ -9,6 +9,8 @@ public class LightSwitch : Interactable
     public UnityEvent SwitchedOn;
     public UnityEvent SwitchedOff;
 
+    public AudioSource lightSound;
+
     public bool switchIsOn;
 
 
@@ -29,6 +31,7 @@ public class LightSwitch : Interactable
 
     public override bool Interact(HoldableObject carryingObject, PlayerInteraction playerInteraction)
     {
+        lightSound.Play();
 
         if (switchIsOn = !switchIsOn)
         {
