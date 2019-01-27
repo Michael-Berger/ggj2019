@@ -9,6 +9,7 @@ public class PlayerInteraction : MonoBehaviour
 
     public static event WorldTransition Transitioned;
 
+    public AudioSource fakeWorldAudio;
 
     [NonSerialized]
     public HoldableObject carryingObject;
@@ -140,6 +141,15 @@ public class PlayerInteraction : MonoBehaviour
     public void TransitionWorlds()
     {
         InMirrorWorld = !InMirrorWorld;
+
+        if (InMirrorWorld)
+        {
+            fakeWorldAudio.Play();
+        } else
+        {
+            fakeWorldAudio.Stop();
+        }
+
         Transitioned?.Invoke(InMirrorWorld);
         GetComponentInChildren<FullScreenEffect>().enabled = InMirrorWorld;
         

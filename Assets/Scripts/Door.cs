@@ -8,6 +8,10 @@ public class Door : Lock
 
     private Animator anim;
 
+    public AudioSource soundDoorOpen;
+    public AudioSource soundDoorClose;
+    public AudioSource soundDoorLocked;
+
     private void Awake()
     {
         anim = transform.parent.GetComponent<Animator>();
@@ -24,6 +28,7 @@ public class Door : Lock
             }
             else
             {
+                soundDoorLocked.Play();
                 return false;
             }
             
@@ -44,6 +49,7 @@ public class Door : Lock
     {
         opened = true;
         anim.SetTrigger("Open");
+        soundDoorOpen.Play();
         // call open animation
     }
 
@@ -51,6 +57,7 @@ public class Door : Lock
     {
         opened = false;
         anim.SetTrigger("Close");
+        soundDoorClose.Play();
         // call close  animation
     }
 
