@@ -53,7 +53,7 @@ public class PlayerInteraction : MonoBehaviour
             {
                 HoldableObject ho = hit.transform.GetComponent<HoldableObject>();
 
-                if (ho != null && ho != carryingObject)
+                if (ho != null && ho != carryingObject && carryingObject == null && ho.Interact(null, this))
                 {
                     StartCoroutine(CarryObject(ho));
                     return;
@@ -105,6 +105,8 @@ public class PlayerInteraction : MonoBehaviour
     IEnumerator CarryObject(HoldableObject ho)
     {
 
+
+        
         carryingObject = ho;
 
         originalCarryLayer = carryingObject.gameObject.layer;

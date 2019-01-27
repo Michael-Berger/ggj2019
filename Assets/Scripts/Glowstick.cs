@@ -8,7 +8,7 @@ public class Glowstick : HoldableObject
     private Color emissiveColor;
     private MeshRenderer meshRenderer;
 
-    private bool showingLight = true;
+    private bool fadeInComplete = false;
 
 
     private void Awake()
@@ -21,20 +21,13 @@ public class Glowstick : HoldableObject
 
     public void FadeOut(float time)
     {
-        if (showingLight)
-        {
-            showingLight = false;
-            StartCoroutine(_Fade(time, 1, 0));
-        }
+        StartCoroutine(_Fade(time, 1, 0));
     }
 
     public void FadeIn(float time)
     {
-        if (!showingLight)
-        {
-            showingLight = true;
-            StartCoroutine(_Fade(time, 0, 1));
-        }
+        StartCoroutine(_Fade(time, 0, 1));
+        fadeInComplete = true;
     }
 
     IEnumerator _Fade(float time, float start, float target)
@@ -53,7 +46,12 @@ public class Glowstick : HoldableObject
 
     public override bool Interact(HoldableObject carryingObject, PlayerInteraction playerInteraction)
     {
-        FadeIn(1.0f);
+        if (!fadeInComplete)
+        {
+            FadeIn(1.0f);
+        }
+        
+        
         return base.Interact(carryingObject, playerInteraction);
     }
 
