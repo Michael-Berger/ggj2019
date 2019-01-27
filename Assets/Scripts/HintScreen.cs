@@ -9,11 +9,16 @@ public class HintScreen : MonoBehaviour
 
     private Material material;
     public Renderer displayWhenVisibleRenderer;
+
+    private new Light light;
+
     void Awake()
     {
         material = GetComponent<MeshRenderer>().material;
         material.DisableKeyword("_EMISSION");
         PlayerInteraction.Transitioned += Transitioned;
+        light = GetComponentInChildren<Light>();
+        light.enabled = false;
     }
 
     private void Transitioned(bool inMirrorWorld)
@@ -34,6 +39,7 @@ public class HintScreen : MonoBehaviour
         }
         
         material.EnableKeyword("_EMISSION");
+        light.enabled = true;
     }
 
 }
