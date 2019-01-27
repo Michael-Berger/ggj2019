@@ -33,7 +33,7 @@ Shader "BitCutter/SicarioInvisibilityView" {
             #include "UnityStandardBRDF.cginc"
             #pragma multi_compile_fwdbase_fullshadows
             //#pragma only_renderers d3d9 d3d11 glcore gles 
-            //#pragma target 3.0
+            #pragma target 3.0
             uniform sampler2D _MainTex; uniform float4 _MainTex_ST;
             uniform float4 _ColorBlend;
             uniform sampler2D _EdgeDistortion; uniform float4 _EdgeDistortion_ST;
