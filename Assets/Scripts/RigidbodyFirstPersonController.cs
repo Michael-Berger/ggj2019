@@ -76,6 +76,11 @@ namespace UnityStandardAssets.Characters.FirstPerson
         }
 
 
+
+
+        public AudioSource footsteps;
+
+
         public Camera cam;
         public MovementSettings movementSettings = new MovementSettings();
         public MouseLook mouseLook = new MouseLook();
@@ -122,6 +127,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
             m_RigidBody = GetComponent<Rigidbody>();
             m_Capsule = GetComponent<CapsuleCollider>();
             mouseLook.Init (transform, cam.transform);
+            footsteps.Pause();
         }
 
 
@@ -132,6 +138,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
             if (Input.GetButtonDown("Jump") && !m_Jump)
             {
                 m_Jump = true;
+            }
+            Vector2 input = GetInput();
+
+            if (!footsteps.isPlaying && (input.x + input.y) > 0.02f)
+            {
+                footsteps.UnPause();
+            }
+            else if (footsteps.isPlaying)
+            {
+                footsteps.Pause();
             }
         }
 
