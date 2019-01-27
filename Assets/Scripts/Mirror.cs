@@ -13,7 +13,8 @@ public class Mirror : Interactable
     private GameObject cameraObject;
     [System.NonSerialized]
     public Camera mirrorCamera;
-    private RenderTexture texture;
+    [System.NonSerialized]
+    public RenderTexture texture;
 
     private new Renderer renderer;
 
