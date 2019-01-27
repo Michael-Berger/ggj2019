@@ -1,25 +1,44 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LightSwitch : Interactable
 {
 
-    public delegate void SwitchHandler(bool turnedOn);
-    public event SwitchHandler Switched;
+    public UnityEvent SwitchedOn;
+    public UnityEvent SwitchedOff;
 
     public bool switchIsOn;
 
 
     public void Awake()
     {
-        Switched?.Invoke(switchIsOn);
+
+        if (switchIsOn)
+        {
+            SwitchedOn?.Invoke();
+        }
+        else
+        {
+            SwitchedOff?.Invoke();
+        }
+
     }
 
 
     public override bool Interact(HoldableObject carryingObject, PlayerInteraction playerInteraction)
     {
-        Switched?.Invoke(switchIsOn = !switchIsOn);
+
+        if (switchIsOn = !switchIsOn)
+        {
+            SwitchedOn?.Invoke();
+        }
+        else
+        {
+            SwitchedOff?.Invoke();
+        }
+
         return true;
     }
 }
