@@ -19,7 +19,7 @@ public class PlayerInteraction : MonoBehaviour
     private LayerMask interactMask;
     private int originalCarryLayer;
 
-    public bool InMirrorWorld { get; set; } = false;
+    public static bool InMirrorWorld { get; set; } = false;
 
 
     private void Awake()
