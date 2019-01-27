@@ -23,7 +23,7 @@ public class Mirror : Interactable
 
         MeshRenderer mesh = GetComponent<MeshRenderer>();
 
-        texture = new RenderTexture(256, 256, 16, RenderTextureFormat.ARGB32);
+        texture = new RenderTexture(512, 512, 16, RenderTextureFormat.ARGB32);
 
         Material material = GetComponent<Renderer>().material;
         material.mainTexture = texture;
