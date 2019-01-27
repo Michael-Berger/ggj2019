@@ -30,15 +30,11 @@ public class KeypadButton : Interactable
 
     public override bool Interact(HoldableObject carryingObject, PlayerInteraction playerInteraction)
     {
-        if (!pressing && carryingObject == null)
+        if (!pressing)
         {
             StartCoroutine(PressKey());
-            return true;
         }
-        else
-        {
-            return false;
-        }
+        return true;
     }
 
 
