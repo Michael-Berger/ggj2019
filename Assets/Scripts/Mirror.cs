@@ -86,6 +86,17 @@ public class Mirror : Interactable
         Vector3 newPosition = counterpart.transform.TransformPoint(relativePositionToThis);
         playerInteraction.transform.position = newPosition;
         //playerInteraction.GetComponent<UnityStandardAssets.Characters.FirstPerson.RigidbodyFirstPersonController>().mouseLook.TurnAround();
+
+
+        if (playerInteraction.carryingObject != null)
+        {
+            relativePositionToThis = transform.InverseTransformPoint(playerInteraction.carryingObject.transform.position);
+            newPosition = counterpart.transform.TransformPoint(relativePositionToThis);
+            playerInteraction.carryingObject.transform.position = newPosition;
+        }
+
+        playerInteraction.TransitionWorlds();
+
     }
 
 }

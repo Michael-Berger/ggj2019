@@ -1,17 +1,26 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
+    public delegate void WorldTransition();
 
-    private HoldableObject carryingObject;
+    public static event WorldTransition Transitioned;
+
+
+    [NonSerialized]
+    public HoldableObject carryingObject;
     public Transform carryPosition;
 
     private Rigidbody carryBody;
 
     private LayerMask interactMask;
     private int originalCarryLayer;
+
+    public bool InMirrorWorld { get; set; } = false;
+
 
     private void Awake()
     {
@@ -126,6 +135,18 @@ public class PlayerInteraction : MonoBehaviour
 
         //rb.isKinematic = false;
     }
+
+
+    public void TransitionWorlds()
+    {
+
+        InMirrorWorld = !InMirrorWorld;
+
+
+        GetComponentInChildren<FullScreenEffect>().enabled = InMirrorWorld;
+        Transitioned?.Invoke();
+    }
+
 
 
 }
