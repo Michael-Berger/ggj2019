@@ -6,6 +6,7 @@ public class TableMoveSound : MonoBehaviour
 {
     public AudioSource key;
     public AudioSource table;
+    public AudioSource thud;
 
     public void PlayKey()
     {
@@ -15,5 +16,10 @@ public class TableMoveSound : MonoBehaviour
     public void PlayTable()
     {
         table.Play();
+    }
+
+    public void PlayThud()
+    {
+        thud.Play();
     }
 }
