@@ -185,6 +185,17 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 43017843}
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &69029631 stripped
@@ -863,6 +874,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Real House
       objectReference: {fileID: 0}
+    - target: {fileID: 8028690256695124012, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: counterpart
+      value: 
+      objectReference: {fileID: 69029631}
+    - target: {fileID: 8028690257769803033, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: counterpart
+      value: 
+      objectReference: {fileID: 1682354557}
+    - target: {fileID: 3603559470266160643, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 803816473}
+    - target: {fileID: 2171036322912250, guid: 1f0a240a093c58341983c9ffa72c09ce, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: da3d8f07bf1981b479b28cd37d37474d, type: 2}
+    - target: {fileID: 376917280065204175, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 803816473}
     - target: {fileID: 5487708393668853180, guid: 1f0a240a093c58341983c9ffa72c09ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -1028,46 +1063,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 852028617}
-    - target: {fileID: 5489258958477443265, guid: 1f0a240a093c58341983c9ffa72c09ce,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 5487708392533932092, guid: 1f0a240a093c58341983c9ffa72c09ce,
-        type: 3}
-      propertyPath: lightSwitch
-      value: 
-      objectReference: {fileID: 5487708393191920328}
-    - target: {fileID: 5487708392533932092, guid: 1f0a240a093c58341983c9ffa72c09ce,
-        type: 3}
-      propertyPath: hasBulb
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 4436606385250791979, guid: 1f0a240a093c58341983c9ffa72c09ce,
-        type: 3}
-      propertyPath: locked
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8028690256560962884, guid: 1f0a240a093c58341983c9ffa72c09ce,
         type: 3}
       propertyPath: counterpart
       value: 
       objectReference: {fileID: 951715431}
-    - target: {fileID: 8028690256695124012, guid: 1f0a240a093c58341983c9ffa72c09ce,
-        type: 3}
-      propertyPath: counterpart
-      value: 
-      objectReference: {fileID: 69029631}
     - target: {fileID: 8028690256059475783, guid: 1f0a240a093c58341983c9ffa72c09ce,
         type: 3}
       propertyPath: counterpart
       value: 
       objectReference: {fileID: 1001570284}
-    - target: {fileID: 8028690257769803033, guid: 1f0a240a093c58341983c9ffa72c09ce,
-        type: 3}
-      propertyPath: counterpart
-      value: 
-      objectReference: {fileID: 1682354557}
     - target: {fileID: 8028690258056356983, guid: 1f0a240a093c58341983c9ffa72c09ce,
         type: 3}
       propertyPath: counterpart
@@ -1098,20 +1103,26 @@ PrefabInstance:
       propertyPath: m_LocalPosition.x
       value: -0.496
       objectReference: {fileID: 0}
-    - target: {fileID: 376917280065204175, guid: 1f0a240a093c58341983c9ffa72c09ce,
+    - target: {fileID: 5489258958477443265, guid: 1f0a240a093c58341983c9ffa72c09ce,
         type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 803816473}
-    - target: {fileID: 2171036322912250, guid: 1f0a240a093c58341983c9ffa72c09ce, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: da3d8f07bf1981b479b28cd37d37474d, type: 2}
-    - target: {fileID: 3603559470266160643, guid: 1f0a240a093c58341983c9ffa72c09ce,
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487708392533932092, guid: 1f0a240a093c58341983c9ffa72c09ce,
         type: 3}
-      propertyPath: m_Mesh
+      propertyPath: lightSwitch
       value: 
-      objectReference: {fileID: 803816473}
+      objectReference: {fileID: 5487708393191920328}
+    - target: {fileID: 5487708392533932092, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: hasBulb
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436606385250791979, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: locked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 5373882420347204938, guid: 1f0a240a093c58341983c9ffa72c09ce,
         type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -5773,6 +5784,30 @@ PrefabInstance:
       propertyPath: m_Name
       value: Fake House
       objectReference: {fileID: 0}
+    - target: {fileID: 8028690256695124012, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: counterpart
+      value: 
+      objectReference: {fileID: 274833009}
+    - target: {fileID: 8028690257769803033, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: counterpart
+      value: 
+      objectReference: {fileID: 248602782}
+    - target: {fileID: 3603559470266160643, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 264990010}
+    - target: {fileID: 2171036322912250, guid: 1f0a240a093c58341983c9ffa72c09ce, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: c0c5178d49b133c4899c464c480a7bb8, type: 2}
+    - target: {fileID: 376917280065204175, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 264990010}
     - target: {fileID: 5487708393668853180, guid: 1f0a240a093c58341983c9ffa72c09ce,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -5956,41 +5991,16 @@ PrefabInstance:
       propertyPath: m_Mesh
       value: 
       objectReference: {fileID: 290060394}
-    - target: {fileID: 5487708393084387675, guid: 1f0a240a093c58341983c9ffa72c09ce,
-        type: 3}
-      propertyPath: m_IsActive
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 4436606385250791979, guid: 1f0a240a093c58341983c9ffa72c09ce,
-        type: 3}
-      propertyPath: keyCode
-      value: MirrorOfficeKey
-      objectReference: {fileID: 0}
-    - target: {fileID: 4436606385250791979, guid: 1f0a240a093c58341983c9ffa72c09ce,
-        type: 3}
-      propertyPath: locked
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 8028690256560962884, guid: 1f0a240a093c58341983c9ffa72c09ce,
         type: 3}
       propertyPath: counterpart
       value: 
       objectReference: {fileID: 651164671}
-    - target: {fileID: 8028690256695124012, guid: 1f0a240a093c58341983c9ffa72c09ce,
-        type: 3}
-      propertyPath: counterpart
-      value: 
-      objectReference: {fileID: 274833009}
     - target: {fileID: 8028690256059475783, guid: 1f0a240a093c58341983c9ffa72c09ce,
         type: 3}
       propertyPath: counterpart
       value: 
       objectReference: {fileID: 810398940}
-    - target: {fileID: 8028690257769803033, guid: 1f0a240a093c58341983c9ffa72c09ce,
-        type: 3}
-      propertyPath: counterpart
-      value: 
-      objectReference: {fileID: 248602782}
     - target: {fileID: 8028690258056356983, guid: 1f0a240a093c58341983c9ffa72c09ce,
         type: 3}
       propertyPath: counterpart
@@ -6016,20 +6026,21 @@ PrefabInstance:
       propertyPath: m_LocalPosition.z
       value: 0.013
       objectReference: {fileID: 0}
-    - target: {fileID: 376917280065204175, guid: 1f0a240a093c58341983c9ffa72c09ce,
+    - target: {fileID: 5487708393084387675, guid: 1f0a240a093c58341983c9ffa72c09ce,
         type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 264990010}
-    - target: {fileID: 2171036322912250, guid: 1f0a240a093c58341983c9ffa72c09ce, type: 3}
-      propertyPath: m_Materials.Array.data[0]
-      value: 
-      objectReference: {fileID: 2100000, guid: c0c5178d49b133c4899c464c480a7bb8, type: 2}
-    - target: {fileID: 3603559470266160643, guid: 1f0a240a093c58341983c9ffa72c09ce,
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436606385250791979, guid: 1f0a240a093c58341983c9ffa72c09ce,
         type: 3}
-      propertyPath: m_Mesh
-      value: 
-      objectReference: {fileID: 264990010}
+      propertyPath: keyCode
+      value: MirrorOfficeKey
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436606385250791979, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: locked
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 238952339817645634, guid: 1f0a240a093c58341983c9ffa72c09ce,
         type: 3}
       propertyPath: SwitchedOn.m_PersistentCalls.m_Calls.Array.size
