@@ -15,8 +15,11 @@ public class GoInTheBasementSequence : MonoBehaviour
     
     void Awake()
     {
+
         sequenceStartMirror.Teleported += Teleported;
         renderer = GetComponent<MeshRenderer>();
+        renderer.material.DisableKeyword("_EMISSION");
+        GetComponentInChildren<Light>().enabled = false;
     }
 
     private void Teleported() => StartCoroutine(StartSequence());
