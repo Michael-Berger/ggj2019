@@ -6,6 +6,10 @@ public class Mirror : Interactable
 {
     public Mirror counterpart;
 
+    public delegate void TransitionHandler();
+    public event TransitionHandler Teleported;
+
+
     private GameObject cameraObject;
     [System.NonSerialized]
     public Camera mirrorCamera;
@@ -96,6 +100,8 @@ public class Mirror : Interactable
         }
 
         playerInteraction.TransitionWorlds();
+
+        Teleported?.Invoke();
 
     }
 
