@@ -13,7 +13,7 @@ public class GameController : MonoBehaviour
     //private Material laternMaterial;
     private Color laternEmissiveColor;
 
-    private float splashTime = 2f;
+    private float splashTime = 8f;
     private float splashFadeTime = 1f;
     private float lightFadeTime = 1f;
     
@@ -43,17 +43,10 @@ public class GameController : MonoBehaviour
         while (timer < splashFadeTime)
         {
             timer += Time.deltaTime;
-            splash.alpha = Mathf.Lerp(1, 0, timer / splashFadeTime);
             yield return null;
         }
 
         glowstick.FadeIn(lightFadeTime);
-
-
-
-        reticle.SetActive(true);
-        splash.gameObject.SetActive(false);
-
 
     }
 }
