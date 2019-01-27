@@ -121,4 +121,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4b28e77b6fed1ea4a9fc553053b109c5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  keyCode: MirrorOfficeKey
+  keyCode: 

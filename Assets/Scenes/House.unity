@@ -3773,6 +3773,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 868077620, guid: bc732b68c9709e44d9560a6a5a0d31cf, type: 3}
+      propertyPath: keyCode
+      value: MirrorOfficeKey
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bc732b68c9709e44d9560a6a5a0d31cf, type: 3}
 --- !u!1 &944150988 stripped
