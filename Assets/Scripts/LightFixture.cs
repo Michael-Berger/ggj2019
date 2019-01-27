@@ -22,13 +22,12 @@ public class LightFixture : Interactable
 
         if (lightSwitch != null)
         {
-            lightSwitch.SwitchedOn.AddListener(Switched);
-            lightSwitch.SwitchedOff.AddListener(Switched);
+            lightSwitch.SwitchedOn.AddListener(LightToggle);
+            lightSwitch.SwitchedOff.AddListener(LightToggle);
         }
         LightToggle();
     }
 
-    private void Switched() => LightToggle();
 
     public override bool Interact(HoldableObject carryingObject, PlayerInteraction playerInteraction)
     {
