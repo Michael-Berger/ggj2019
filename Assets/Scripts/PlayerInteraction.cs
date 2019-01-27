@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class PlayerInteraction : MonoBehaviour
 {
-    public delegate void WorldTransition();
+    public delegate void WorldTransition(bool inMirrorWorld);
 
     public static event WorldTransition Transitioned;
 
@@ -139,12 +139,10 @@ public class PlayerInteraction : MonoBehaviour
 
     public void TransitionWorlds()
     {
-
         InMirrorWorld = !InMirrorWorld;
-
-
+        Transitioned?.Invoke(InMirrorWorld);
         GetComponentInChildren<FullScreenEffect>().enabled = InMirrorWorld;
-        Transitioned?.Invoke();
+        
     }
 
 
