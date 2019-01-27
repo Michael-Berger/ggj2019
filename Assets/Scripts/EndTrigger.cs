@@ -28,6 +28,8 @@ public class EndTrigger : MonoBehaviour
 
     public void TriggerEnd()
     {
+        mirror.counterpart.gameObject.SetActive(false);
+        mirror.gameObject.SetActive(false);
         StartCoroutine(reloadScene());
     }
 

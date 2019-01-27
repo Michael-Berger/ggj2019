@@ -10,6 +10,7 @@ public class BathroomMirrorChange : MonoBehaviour
     public Door door;
     public Glowstick glowstick;
     public LightFixture lightFixture;
+    public Glowstick skeletonGlowstick;
 
     private void Awake() => keypad.Unlocked += Unlocked;
 
@@ -20,6 +21,7 @@ public class BathroomMirrorChange : MonoBehaviour
         door.locked = false;
         door.Open();
         glowstick.FadeIn(1);
+        skeletonGlowstick.FadeIn(1);
         lightFixture.hasBulb = true;
         lightFixture.LightToggle();
     }

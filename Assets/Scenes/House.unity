@@ -209,6 +209,18 @@ MonoBehaviour:
         m_CallState: 2
     m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
       Culture=neutral, PublicKeyToken=null
+--- !u!114 &49053252 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 473581518, guid: ac3ac04bc72d1e240a8e75a8da9ce827,
+    type: 3}
+  m_PrefabInstance: {fileID: 1532469336}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9020df8a072704a4e83b1441bd6f70ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &69029631 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8028690256695124012, guid: 1f0a240a093c58341983c9ffa72c09ce,
@@ -4343,7 +4355,7 @@ Mesh:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: pb_Mesh279026
+  m_Name: pb_Mesh290398
   serializedVersion: 9
   m_SubMeshes:
   - serializedVersion: 2
@@ -4911,8 +4923,9 @@ MonoBehaviour:
   newCounterpart: {fileID: 500993837}
   keypad: {fileID: 1695606080}
   door: {fileID: 1590344279}
-  glowstick: {fileID: 0}
-  lightFixture: {fileID: 0}
+  glowstick: {fileID: 1518166070}
+  lightFixture: {fileID: 1335451411}
+  skeletonGlowstick: {fileID: 49053252}
 --- !u!1001 &1232052449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5799,6 +5812,18 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &1518166070 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 1272372394, guid: 775fe066f51ad1c4398fc31446de5e5c,
+    type: 3}
+  m_PrefabInstance: {fileID: 599314237}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9020df8a072704a4e83b1441bd6f70ff, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!43 &1525931150
 Mesh:
   m_ObjectHideFlags: 0
@@ -5973,7 +5998,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1045463548, guid: ac3ac04bc72d1e240a8e75a8da9ce827, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 20.177248
+      value: 0.813
       objectReference: {fileID: 0}
     - target: {fileID: 1045463548, guid: ac3ac04bc72d1e240a8e75a8da9ce827, type: 3}
       propertyPath: m_LocalPosition.y
