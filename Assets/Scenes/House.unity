@@ -1023,7 +1023,22 @@ PrefabInstance:
     - target: {fileID: 5489258958477443265, guid: 1f0a240a093c58341983c9ffa72c09ce,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 5487708392533932092, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: lightSwitch
+      value: 
+      objectReference: {fileID: 1478810785}
+    - target: {fileID: 5487708392533932092, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: hasBulb
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436606385250791979, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: locked
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5373882420347204938, guid: 1f0a240a093c58341983c9ffa72c09ce,
         type: 3}
@@ -3344,6 +3359,19 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 14
   m_Mesh: {fileID: 4300000, guid: feb45946884276b4e8569f74ad3dd1e2, type: 3}
+--- !u!114 &868077620
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 868077615}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4b28e77b6fed1ea4a9fc553053b109c5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  keyCode: MirrorOfficeKey
 --- !u!114 &927886930 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 8028690257198885850, guid: 1f0a240a093c58341983c9ffa72c09ce,
@@ -4212,6 +4240,48 @@ Mesh:
     offset: 0
     size: 0
     path: 
+--- !u!1 &1478810783 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5373882420349135752, guid: 1f0a240a093c58341983c9ffa72c09ce,
+    type: 3}
+  m_PrefabInstance: {fileID: 5487708393191920327}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &1478810784
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478810783}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.1308415, y: 0.14929342, z: 0.10142128}
+  m_Center: {x: 0.0008262396, y: 0.007221639, z: 0.00091440976}
+--- !u!114 &1478810785
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1478810783}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6194d45f51da159479fbd76c4c6ba1f1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  SwitchedOn:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  SwitchedOff:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
+      Culture=neutral, PublicKeyToken=null
+  switchIsOn: 0
 --- !u!43 &1525931150
 Mesh:
   m_ObjectHideFlags: 0
@@ -5518,6 +5588,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalPosition.z
       value: 0.013
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436606385250791979, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: keyCode
+      value: MirrorOfficeKey
+      objectReference: {fileID: 0}
+    - target: {fileID: 4436606385250791979, guid: 1f0a240a093c58341983c9ffa72c09ce,
+        type: 3}
+      propertyPath: locked
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1f0a240a093c58341983c9ffa72c09ce, type: 3}
